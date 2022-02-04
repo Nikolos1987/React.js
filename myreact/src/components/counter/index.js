@@ -1,0 +1,70 @@
+
+import { useState } from "react";
+import { useEffect } from "react";
+
+// export const Counter = () => {
+//     let test = 2
+//     const [count, setCount] = useState(test);
+//     const updateCount = () => {
+//         setCount((revCoun) => revCoun + 1);  
+//       }
+//     return (
+//         <div>
+//             <h1>{count}</h1>
+
+//             <button className="counter-button" onClick={updateCount}>+1</button>
+//         </div>
+//     )
+// }
+export function Count({ onSubmit }) {
+
+  const [value, setValue] = useState();
+  const [counter, setCounter]=useState(0)
+
+  useEffect(() => {
+
+  }, [counter])
+
+  const handleChange = (event) => {
+
+    setValue({
+      id:counter,
+      autor:"user",
+    post:event.target.value})
+
+  };
+   const  handlesubmit=(event)=>{
+    event.preventDefault()
+        setCounter((revcounter=>revcounter+Date.now()));
+    onSubmit(value)
+
+   }
+
+  return (
+    <form onSubmit={handlesubmit} >
+      <input type="text" onChange={handleChange} />
+      <input type="submit" />
+    </form>
+  );
+};
+
+
+
+
+
+
+export function Btn(props) {
+  console.log("btn", props)
+  const [value, setValue] = useState({
+    as: "атор",
+    d: "сообщение"
+  });
+  const HBZ = () => props.onClick(value);
+
+
+  return (
+    <button onClick={HBZ}>click</button>
+  );
+
+
+}

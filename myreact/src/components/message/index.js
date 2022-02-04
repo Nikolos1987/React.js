@@ -1,5 +1,7 @@
 import './stile.css';
+
 export const Message=(props)=>{
- console.log(props)
-   return (<h1 className="message">My {props.text} {props.react}</h1>)
+
+   return (<h1 key={props.teext.id} className="message">autor:{props.teext.autor} post: {props.teext.post} </h1>)
 }
+
