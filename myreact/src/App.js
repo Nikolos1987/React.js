@@ -1,9 +1,10 @@
 
 import './App.css';
 import { Message } from './components/message'
-import { Count, Btn } from './components/counter';
+import { Count } from './components/counter';
 import { useEffect, useState } from 'react';
-import { Mess } from './components/test/test';
+
+
 
 function App() {
   const [messages, setMessages] = useState([
@@ -49,8 +50,9 @@ function App() {
 
       {messages.map((text) => <Message key={text.id} teext={text} />)}
       <Count onSubmit={handleAddMessage} />
-      <Btn onClick={updateData} />
-      <Mess test={test} />
+      
+   
+      
     </div>
   )
 }

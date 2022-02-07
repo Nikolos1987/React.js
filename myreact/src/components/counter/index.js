@@ -2,6 +2,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+
 // export const Counter = () => {
 //     let test = 2
 //     const [count, setCount] = useState(test);
@@ -18,7 +21,7 @@ import { useEffect } from "react";
 // }
 export function Count({ onSubmit }) {
 
-  const [value, setValue] = useState();
+  const [value, setValue] = useState({});
   const [counter, setCounter]=useState(0)
 
   useEffect(() => {
@@ -31,6 +34,7 @@ export function Count({ onSubmit }) {
       id:counter,
       autor:"user",
     post:event.target.value})
+    console.log(value)
 
   };
    const  handlesubmit=(event)=>{
@@ -41,10 +45,12 @@ export function Count({ onSubmit }) {
    }
 
   return (
-    <form onSubmit={handlesubmit} >
-      <input type="text" onChange={handleChange} />
-      <input type="submit" />
-    </form>
+    
+<form onSubmit={handlesubmit} >
+  <TextField size="small" className="button" label="Outlined" variant="outlined"  
+    onChange={handleChange} />
+     <Button variant="contained" type="submit">отправить</Button>
+</form>
   );
 };
 
