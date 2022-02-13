@@ -3,7 +3,8 @@ import './App.css';
 import { Message } from './components/message'
 import { Count } from './components/counter';
 import { useEffect, useState } from 'react';
-import{ChatList} from "./components/Chatlist"
+import{ChatList} from "./components/Chatlist";
+import{Router} from './components/router';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
       {messages.map((text) => <Message key={text.id} teext={text} />)}
       <Count onSubmit={handleAddMessage} />      
       <ChatList/>  
+      <Router></Router>
       
     </div>
   )

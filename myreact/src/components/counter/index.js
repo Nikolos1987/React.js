@@ -53,12 +53,6 @@ export function Count({ onSubmit }) {
 </form>
   );
 };
-
-
-
-
-
-
 export function Btn(props) {
   console.log("btn", props)
   const [value, setValue] = useState({
