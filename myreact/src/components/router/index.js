@@ -1,8 +1,11 @@
 
 import {BrowserRouter, Routes, Route,Link} from "react-router-dom"
+import {Chats} from '../chats'
+import { ChatList } from "../Chatlist"
+
 
 const Home=()=><h2>home page</h2>
-const Chats=()=><h2>Chats</h2>
+
 export const Router =()=>{
     return(
       <BrowserRouter>
@@ -11,8 +14,12 @@ export const Router =()=>{
       <Link to='/chats'>Chats</Link>
       <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path='chats'>
+              <Route index element={<ChatList/>}/>
+              <Route path=':ChatId' element={<Chats/>}/>
 
-          <Route path='/chats' element={<Chats/>}/>
+          </Route>
+          
 
       </Routes>
       </BrowserRouter>  
